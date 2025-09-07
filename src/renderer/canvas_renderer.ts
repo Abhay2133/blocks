@@ -4,26 +4,21 @@ export class CanvasRenderer extends BaseRenderer {
   isRunning = false;
   blocks: Map<string, Block> = new Map();
   canvas: HTMLCanvasElement = null as unknown as HTMLCanvasElement;
-
   constructor(canvas: HTMLCanvasElement, dimension: Vec2 = [800, 600]) {
     super();
     this.canvas = canvas;
     this.setDimension(dimension);
     this.blocks = new Map();
   }
-
   render(block: Block): BaseRenderer {
     throw new Error('Method not implemented.');
   }
-
   add(block: Block): Block {
     throw new Error('Method not implemented.');
   }
-
   update(id: string, block: Partial<Block>): Block | undefined {
     throw new Error('Method not implemented.');
   }
-
   remove(id: string): Block | undefined {
     throw new Error('Method not implemented.');
   }
