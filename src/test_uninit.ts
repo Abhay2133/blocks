@@ -1,5 +1,4 @@
 class T {
-    prop: number;
-method() {}
-    
+  prop: number;
+  method() {}
 }

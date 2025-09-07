@@ -1,18 +1,18 @@
-export type BlockType = "rect" | "circle" | "line" | "curve";
+export type BlockType = 'rect' | 'circle' | 'line' | 'curve';
 
 export type Vec2 = [number, number];
 
 export type Block = {
-    type: BlockType,
-    pos: Vec2,
-    size: Vec2,
-    draggable: boolean
-}
+  type: BlockType;
+  pos: Vec2;
+  size: Vec2;
+  draggable: boolean;
+};
 
 export abstract class BaseRenderer {
-    abstract render(block: Block): BaseRenderer;
-    abstract run(): BaseRenderer;
-    abstract add(block: Block): Block;
-    abstract update(id: string, block: Partial<Block>): Block | undefined;
-    abstract remove(id: string): Block | undefined;
+  abstract render(block: Block): BaseRenderer;
+  abstract run(): BaseRenderer;
+  abstract add(block: Block): Block;
+  abstract update(id: string, block: Partial<Block>): Block | undefined;
+  abstract remove(id: string): Block | undefined;
 }

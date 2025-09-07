@@ -1,27 +1,65 @@
-# blocks
+# Blocks
 
-Formatting / class member sorting
---------------------------------
+## Class Member Reordering
 
-This repo includes example configs to automatically sort class members (static -> constructor -> public -> private -> etc.). Two supported approaches:
+This project automatically reorders TypeScript class members using ESLint and Prettier for consistent code organization.
 
-- Prettier plugin: installs `prettier-plugin-sort-class-members` and uses Prettier to reorder members when formatting.
-- ESLint rule: installs `eslint-plugin-sort-class-members` and auto-fixes with ESLint (configured in `.eslintrc.cjs`).
+### Order of Class Members
 
-Install the dev dependencies (choose one or both):
+The configured order is:
+1. **Properties** (instance variables)
+2. **Constructor**
+3. **Static properties**
+4. **Static methods**
+5. **Instance methods** (public and private)
+
+### Usage
+
+#### Automatic Formatting in VS Code
+- Install recommended extensions (ESLint, Prettier)
+- Files are automatically formatted and reordered on save
+- ESLint fixes class member order
+- Prettier handles code formatting
+
+#### Manual Commands
 
 ```bash
-# Prettier plugin
-npm install -D prettier prettier-plugin-sort-class-members
+# Install dependencies
+npm install
 
-# ESLint + rule
-npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-sort-class-members
+# Lint and fix class member ordering
+npm run lint:fix
+
+# Format code with Prettier
+npm run format
+
+# Check formatting without making changes
+npm run format:check
 ```
 
-Then open the project in VS Code and accept the recommended extensions (Prettier, ESLint). You can run:
+### Configuration Files
 
-```bash
-npm run lint        # runs eslint (non-failing)
-npm run lint:fix    # attempts to fix and reorder class members
+- `eslint.config.cjs` - ESLint configuration with sort-class-members rule
+- `.prettierrc` - Prettier configuration for code formatting
+- `.vscode/settings.json` - VS Code workspace settings for format-on-save
+- `.vscode/extensions.json` - Recommended VS Code extensions
+
+### Example
+
+**Before sorting:**
+```typescript
+class MyClass {
+  method() { /* ... */ }
+  property: string = "value";
+  constructor() { /* ... */ }
+}
 ```
-# blocks
+
+**After sorting:**
+```typescript
+class MyClass {
+  property: string = "value";
+  constructor() { /* ... */ }
+  method() { /* ... */ }
+}
+```

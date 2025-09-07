@@ -14,19 +14,19 @@ module.exports = [
 			'sort-class-members': require('eslint-plugin-sort-class-members')
 		},
 		rules: {
-							'sort-class-members/sort-class-members': [
-								'error',
-								{
-									order: [
-										'[properties]',
-										'constructor',
-										'[static-properties]',
-										'[static-methods]',
-										'[methods]'
-									],
-									accessorPairPositioning: 'getThenSet'
-								}
-							]
+			'sort-class-members/sort-class-members': [
+				'error',
+				{
+					order: [
+						'[properties]',
+						'constructor',
+						'[static-properties]',
+						'[static-methods]',
+						'[methods]'
+					],
+					accessorPairPositioning: 'getThenSet'
+				}
+			]
 		}
 	}
 ];
