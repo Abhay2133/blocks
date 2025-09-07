@@ -1,0 +1,13 @@
+[
+	{
+		"key": "ctrl+shift+i",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"eslint.executeAutofix",
+				"editor.action.formatDocument"
+			]
+		},
+		"when": "editorTextFocus && (editorLangId == typescript || editorLangId == typescriptreact)"
+	}
+]
