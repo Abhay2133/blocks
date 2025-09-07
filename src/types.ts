@@ -5,7 +5,7 @@ export type Vec2 = [number, number];
 export type Block = {
   type: BlockType;
   pos: Vec2;
-  size: Vec2;
+  size: Vec2 | number;
   draggable: boolean;
 };
 
